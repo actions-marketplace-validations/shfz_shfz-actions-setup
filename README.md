@@ -1,6 +1,8 @@
 # shfz-actions-setup
 
-This action for setup shfz.
+This action for setup [shfz](https://github.com/shfz/shfz).
+
+Download shfz binary from github release page, and install it.
 
 ## Inputs
 
