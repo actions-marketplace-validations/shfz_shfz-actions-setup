@@ -14,6 +14,7 @@ runs:
   steps:
     - name: setup shfz
       run: |
+        cd /tmp
         wget https://github.com/shfz/shfz/releases/download/v${{ inputs.version }}/shfz_${{ inputs.version }}_linux_amd64.tar.gz
         tar -zxvf shfz_${{ inputs.version }}_linux_amd64.tar.gz
         sudo mv shfz /usr/local/bin/
