@@ -1,10 +1,10 @@
-name: 'SHFZ setup'
-description: 'This action for setup shfz.'
+name: "SHFZ setup"
+description: "This action for setup shfz."
 inputs:
   version:
-    description: 'shfz version'
+    description: "shfz version"
     required: true
-    default: '0.0.2'
+    default: "0.0.2"
 outputs:
   random-number:
     description: "Random number"
@@ -16,9 +16,10 @@ runs:
       run: |
         wget https://github.com/shfz/shfz/releases/download/v${{ inputs.version }}/shfz_${{ inputs.version }}_linux_amd64.tar.gz
         tar -zxvf shfz_${{ inputs.version }}_linux_amd64.tar.gz
-        sudo chmod +x shfz
-        ./shfz --help
+        sudo mv shfz /usr/local/bin/
+        sudo chmod +x /usr/local/bin/shfz
+        shfz --help
       shell: bash
     - name: run shfz server
-      run: ./shfz server &
+      run: shfz server &
       shell: bash
